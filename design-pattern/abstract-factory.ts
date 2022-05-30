@@ -1,3 +1,5 @@
+// abstract factory design pattern solves the problem of creating the entire families of related products without specifying their concrete classes.
+
 interface Button {
   paint(): string;
 }
