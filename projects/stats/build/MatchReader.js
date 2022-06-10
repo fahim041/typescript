@@ -11,7 +11,7 @@ class MatchReader {
         this.reader.read();
         this.matches = this.reader.data.map((row) => {
             return [
-                (0, utils_1.dateStringToDate)(row[0]),
+                utils_1.dateStringToDate(row[0]),
                 row[1],
                 row[2],
                 parseInt(row[3]),
