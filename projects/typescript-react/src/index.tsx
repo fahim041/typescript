@@ -1,13 +1,8 @@
 import ReactDOM from "react-dom";
-import EventComponent from "./events/EventComponent";
-import User from "./classes/User";
+import ReduxApp from "./redux/components/Redux";
 
 const App = () => {
-  return (
-    <div>
-      <User />
-    </div>
-  );
+  return <ReduxApp />;
 };
 
 ReactDOM.render(<App />, document.querySelector("#root"));
