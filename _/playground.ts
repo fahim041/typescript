@@ -2,7 +2,7 @@ let age: number = 20;
 
 let arr: [number, string] = [1, "2"];
 
-console.log(arr);
+// console.log(arr);
 
 // enum
 
@@ -23,4 +23,54 @@ function ageCheck(age: number, year?: number): boolean {
   return false;
 }
 
-console.log(ageCheck(32));
+// console.log(ageCheck(32));
+
+//type aliases
+
+type Employee = {
+  readonly id: number,
+  name: string
+}
+
+const user: Employee = {
+  id: 1,
+  name: "User-1"
+}
+
+//generics class
+
+class KP<K, V>{
+  constructor(public key: K, public value: V){}
+}
+
+let kp = new KP<string, string>('1', 'a');
+console.log(kp)
+
+//generic function
+
+function wrapArray<T>(value: T): T[]{
+  return [value]
+}
+
+let s = wrapArray<string>('5')
+
+//generics interface
+
+interface Result<T> {
+  data: T | null,
+  error: string | null
+}
+
+function fetch<T>(url: string): Result<T>{
+  return {data: null, error: null}
+}
+
+interface User{
+  name: string;
+}
+
+interface Product{
+  title: string;
+}
+
+let result = fetch<Product>('url')
