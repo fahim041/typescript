@@ -74,3 +74,10 @@ interface Product{
 }
 
 let result = fetch<Product>('url')
+
+//generic constraints
+function echo<T extends number | string>(value: T): T{
+  return value;
+}
+
+echo<number>(1);
