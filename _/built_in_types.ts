@@ -41,3 +41,26 @@ let em: Employee = {
   id: 1,
   name: "employee-2",
 };
+
+//union type
+function kgToLbs(weight: number | string): number {
+  if (typeof weight == "number") {
+    return weight * 2.2;
+  }
+  return parseInt(weight) * 2.2;
+}
+
+//intersection type
+type Draggable = {
+  drag: () => void;
+};
+
+type Resizeable = {
+  resize: () => void;
+};
+
+type UIWidget = Draggable & Resizeable;
+const textBox: UIWidget = {
+  drag() {},
+  resize() {},
+};
