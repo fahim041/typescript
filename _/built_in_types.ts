@@ -64,3 +64,13 @@ const textBox: UIWidget = {
   drag() {},
   resize() {},
 };
+
+//nullish coaelscing operator
+let speed: number | null = null;
+let car = {
+  speed: speed ?? 30,
+};
+
+//type assertions
+let phone = <HTMLInputElement>document.getElementById("phone");
+phone.value;
