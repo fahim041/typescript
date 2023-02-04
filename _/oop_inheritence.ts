@@ -11,11 +11,7 @@ class Person {
 }
 
 class Student extends Person {
-  constructor(
-    public studentId: number,
-    public override firstName: string,
-    public override lastName: string
-  ) {
+  constructor(public studentId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
 
@@ -25,11 +21,7 @@ class Student extends Person {
 }
 
 class Teacher extends Person {
-  constructor(
-    public teacherId: number,
-    public override firstName: string,
-    public override lastName: string
-  ) {
+  constructor(public teacherId: number, firstName: string, lastName: string) {
     super(firstName, lastName);
   }
 
@@ -37,6 +29,15 @@ class Teacher extends Person {
     return "Prof " + super.fullName;
   }
 }
+
+//polymorphism
+function printName(people: Person[]) {
+  for (let person of people) {
+    console.log(person.fullName);
+  }
+}
+
+printName([new Student(1, "John", "Mark"), new Teacher(11, "Tech", "Jack")]);
 
 let teacher = new Teacher(1, "john", "mack");
 console.log(teacher.fullName);
